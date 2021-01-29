@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Course Goals</h1>
+    </header>
+    <section id="user-goal">
+      <h2>My Course Goal</h2>
+
+      <!--<p v-html="courseGoal"></p>
+      This syntax is used for use html tag in script -->
+
+      <p>{{ courseGoal }}</p> <!-- This syntax is called Interpolation in Vue-->
+
+      <p>Learn about Html using this link <a v-bind:href="learnHtml">Click Here</a></p> <!--This syntax is use for connect the link-->
+
+      <p>{{ outputGoals() }}</p> <!--This syntax is used for calling methods-->
+
+      <p>Learn about Css using  this link <a v-bind:href="learnCss">Click Here</a> and Also need to learn about JavaScript <a v-bind:href="learnJavascript">Click Here</a></p>
+      
+      <p>{{ learnConcept() }}</p>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Events</h1>
+    </header>
+    <section id="events">
+      <h2>Events in Action</h2>
+      <button v-on:click = "add(1)">Add</button>
+      <button v-on:click = "minus(1)">Reduce</button>
+      <button v-on:click = "remove()">Remove</button>
+      <!--v:on:click.right OR v-on:click.left also use for right or left click-->
+      <button v-on:click = "add(20)">Add 20</button>
+      <button v-on:click = "minus(20)">Reduce 20</button>
+      <p v-once>Starting Counter : {{ counter }}</p>
+      <p>Result: {{ counter }}</p>
+      
+     <!-- <input type="text" v-bind:value="name" v-on:input="setName($event,'Patel')" v-on:keyup.enter="confirmInput"/> -->
+     <input type="text" v-model="name" v-on:keyup.enter="confirmInput"/>
+     <input type="text" v-model= "surName" v-on:keyup.enter="confirmInput('Patel')" />
+      <!--v-on:input event is use for get name by user-->
+      <button v-on:click = "resetInput()">Reset Name</button>
+      <p>Your name: {{ confirmedName }}</p>
+      <p>Final name: {{ fullname }}</p>
+
+      <form v-on:submit.prevent="submitForm">
+        <!--v-on:submit.prevent event is used for not to reload page AND submit.stop many more events is used in this page-->
+        <input type="text"/>
+        <button>Sign Up</button> 
+
+      </form>
+    </section>
+  </body>
+</html>
