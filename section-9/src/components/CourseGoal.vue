@@ -1,7 +1,7 @@
 <template>
     <ul>
-        <li v-for="goal in goals" :key="goal">{{ goal }}
-            <slot></slot>
+        <li v-for="goal in goals" :key="goal">
+            <slot :item="goal" another-prop="...."></slot>
         </li>
     </ul>
 </template>
